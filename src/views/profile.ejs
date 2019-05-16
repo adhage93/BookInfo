@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-dark bg-primary" style="background-color: #e3f2fd;">
+          <ul class="nav nav-pill">
+            <li class="nav-item" ><h2><%=title%></h2></li>
+            <%for(let i=0; i<nav.length; i++) {%>
+              <span>&emsp;</span>  
+              <li class="nav-item">
+                <a class="navbar-brand" href="<%=nav[i].link%>"><%=nav[i].title%></a>
+              </li>
+            <%}%>
+        </ul>
+        <!--User Display Section-->
+        <ul class="nav nav-pill">
+            <li style="visibility: visible;"><h2><%=user.name%></h2></li>
+
+            <span>&emsp;</span>  
+            <li class="nav-item">
+                <a href="/auth/profile"><button class="btn btn-primary" style="width:100%">Profile</button></a>
+            </li>
+            <span>&emsp;</span>  
+            <li class="nav-item">
+                <a href="/auth/logout"><button class="btn btn-primary" style="width:100%">Log Out</button></a>
+            </li>
+          </ul>
+        </nav>
+    <!---------------------------------------------------------------------------------------------------------------------------------->
+        <div>
+            <center>
+                <div class="jumbotron" style="width:80%">
+                    <h1 class="display-3">Your Profile Page </h1> 
+                    <br>
+                    <hr class="my-2">
+                    <br>
+    <!---------------------------------------------------------------------------------------------------------------------------------->                              
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h3 style="color:blue; font-weight:bold;">
+                        <%=user.name%>
+                    </h3>
+                    <h6>
+                        <%=user.profession%>
+                    </h6>
+                </div>
+            </div>
+            <br>
+            <hr class="my-2">
+            <br>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label style="font-weight:bold;">User Id</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><%=user.username%></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label style="font-weight:bold;">Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><%=user.name%></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label style="font-weight:bold;">Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><%=user.email%></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label style="font-weight:bold;">Phone</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><%=user.phone%></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label style="font-weight:bold;">Profession</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><%=user.profession%></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>           
+    </div>
+
+    <!---------------------------------------------------------------------------------------------------------------------------------->
+            <center>
+        </div>
+      
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
+    </body>
+</html>

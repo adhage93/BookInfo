@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-dark bg-primary" style="background-color: #e3f2fd;">
+          <ul class="nav nav-pill">
+            <li class="nav-item" ><h2><%=title%></h2></li>
+            <%for(let i=0; i<nav.length; i++) {%>
+              <span>&emsp;</span>  
+              <li class="nav-item">
+                <a class="navbar-brand" href="<%=nav[i].link%>"><%=nav[i].title%></a>
+              </li>
+            <%}%>
+          </ul>
+          <!--User Display Section-->
+          <ul class="nav nav-pill">
+            <li style="visibility: visible;"><h2>User Name</h2></li>
+
+            <span>&emsp;</span>  
+            <li class="nav-item">
+                <a href="/auth/profile"><button class="btn btn-primary" style="width:100%">Profile</button></a>
+            </li>
+            <span>&emsp;</span>  
+            <li class="nav-item">
+                <a href="/auth/logout"><button class="btn btn-primary" style="width:100%">Log Out</button></a>
+            </li>
+          </ul>
+        </nav>
+    <!---------------------------------------------------------------------------------------------------------------------------------->
+        <div>
+            <center>
+                <div class="jumbotron" style="width:80%">
+                    <h1 class="display-3">Sign Up!</h1> 
+                    <br>
+                    <hr class="my-2">
+                    <br>
+                    
+                    <form name="signUpForm" action="/auth/signUp" method="POST">
+
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-lg" style="width:150px">Name :</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="name" name="name">
+                        </div>
+
+                        <br>
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-lg" style="width:150px">Email :</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="email" name="email">
+                        </div>
+
+                        <br>
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-lg" style="width:150px">User-id :</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="username" name="username">
+                        </div>
+                        <br>
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-lg" style="width:150px">Password :</span>
+                            </div>
+                            <input type="password" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="password" name="password">
+                        </div>
+
+                        <br>
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-lg" style="width:150px">Phone :</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="phone" name="phone">
+                        </div>
+
+                        <br>
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-lg" style="width:150px">Profession :</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="profession" name="profession">
+                        </div>
+                        
+                        <br>
+                        <hr class="my-2">
+                        <br>
+                        <div class="form-group row">
+                        <div class="col-sm-10 offset-sm-2">
+                            <button class="btn btn-primary" style="width:30%">Sign Up</button>
+                        </div>
+                   </form>
+            <center>
+        </div>
+      
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
+    </body>
+</html>

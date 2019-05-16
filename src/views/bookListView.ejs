@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-dark bg-primary" style="background-color: #e3f2fd;">
+            <ul class="nav nav-pill">
+                <li class="nav-item" ><h2><%=title%></h2></li>
+                <%for(let i=0; i<nav.length; i++) {%>
+                    <span>&emsp;</span>  
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="<%=nav[i].link%>"><%=nav[i].title%></a>
+                    </li>
+                <%}%>
+            </ul>
+            <!--User Display Section-->
+            <ul class="nav nav-pill">
+                <li style="visibility: visible;">
+                    <h2>
+                        <%
+                        if(user !== undefined)
+                        {%>
+                        <%=user.name%>
+                        <%}
+                        else 
+                        {%>
+                        <%="<User-Name>"%>
+                        <%} 
+                        %>
+                    </h2>
+                </li>
+
+                <span>&emsp;</span>  
+                <li class="nav-item">
+                    <a href="/auth/profile"><button class="btn btn-primary" style="width:100%">Profile</button></a>
+                </li>
+                <span>&emsp;</span>  
+                <li class="nav-item">
+                    <a href="/auth/logout"><button class="btn btn-primary" style="width:100%">Log Out</button></a>
+                </li>
+            </ul>
+        </nav>
+
+    <!---------------------------------------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <br/>
+        <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <form class="card card-sm" action="/books" method="GET">
+                        <div class="card-body row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <i class="fas fa-search h4 text-body"></i>
+                            </div>
+                            <!--end of col-->
+                            <div class="col">
+                                <input class="form-control form-control-lg form-control-borderless" type="text" placeholder="Search topics or keywords" id="title" name="title">
+                            </div>
+                            <!--end of col-->
+                            <div class="col-auto">
+                                <button class="btn btn-lg btn-success" type="submit">Search</button>
+                            </div>
+                            <!--end of col-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!---------------------------------------------------------------------------------------------------------------------------------->
+        <br>
+        <hr class='my-2'>
+        <br>
+        <div>
+        <%for(let i=0; i<books.length; i++) {%>
+            <center>    
+            <div class="card text-white bg-dark mb-3 d-inline-block" style="width: 50%;">
+                <div class="card-header">
+                    <h4><%=books[i].title%></h4>
+                    <p class="card-text" style="font-size:15px"><%=books[i].subtitle%></p>
+                </div>
+                <div class="card-body">
+                    <h5>By : <%=books[i].authors%></h5>
+                    <a href="/books/<%=books[i].isbn%>">Read More...<a>
+                </div>
+            </div>
+            </center>  
+        <%}%>
+        </div>
+
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
+    </body>
+</html>

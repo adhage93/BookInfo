@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-dark bg-primary" style="background-color: #e3f2fd;">
+            <ul class="nav nav-pill">
+                <li class="nav-item" ><h2><%=title%></h2></li>
+                <%for(let i=0; i<nav.length; i++) {%>
+                    <span>&emsp;</span>  
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="<%=nav[i].link%>"><%=nav[i].title%></a>
+                    </li>
+                <%}%>
+            </ul>
+            <!--User Display Section-->
+            <ul class="nav nav-pill">
+                <li style="visibility: visible;"><h2><%=user.name%></h2></li>
+
+                <span>&emsp;</span>  
+                <li class="nav-item">
+                    <a href="/auth/profile"><button class="btn btn-primary" style="width:100%">Profile</button></a>
+                </li>
+                <span>&emsp;</span>  
+                <li class="nav-item">
+                    <a href="/auth/logout"><button class="btn btn-primary" style="width:100%">Log Out</button></a>
+                </li>
+            </ul>
+        </nav>
+    <!---------------------------------------------------------------------------------------------------------------------------------->    
+        <br>
+            <div class="container-fluid" style="align-self: center width:80%";>
+            <div class="card text-white bg-dark mb-3 d-inline-block" style="width: 80%; align-items: center;">
+                <center>
+                <div class="card-header">
+                    <div class="rounded float-left" style="border: 6px double white" >
+                        <img src="<%=book.details.image_url%>" height=300px white=150px hspace="10px" vspace="10px" >
+                    </div>
+                    <h3><%=book.details.title%></h3>
+                </div>
+                </center>
+                <div class="card-body">
+                    <center>
+                    <h5>By : <%=book.details.authors.author.name%></h5>
+
+                    <span>ISBN : <%=book.details.isbn13%></span></br>
+                    <span>Pages : <%=book.details.num_pages%></span></br>
+                    <span>Publisher : <%=book.details.publisher%></span></br>
+                    <span>Published On : <%=book.details.publication_year%></span></br></br>
+                    <span>Raitings : <%-book.details.work.rating_dist%></span></br>
+                    <span>Avg Raitings : <%-book.details.average_rating%></span></br>
+                    </center>
+                    <br><br><br>
+                    <hr class="my-2" style="color:white; background-color:white;" size=3px>
+                    <br>
+                    <div class="container">
+                    <p style="weidth:70%">Description : <br><%-book.details.description%></p></br>
+                    <hr class="my-2" style="color:white; background-color:white;" size=3px>
+                    <br>
+                    <h5>Name : <%=book.details.authors.author.name%></h5>
+                    <span>ID : <%=book.details.authors.author.id%></span></br>
+                    <span>Avg Rating : <%=book.details.authors.author.average_rating%></span></br>
+                    <span>Reviews : <%=book.details.authors.author.ratings_count%></span></br>
+                    <span>Reviews : <%=book.details.authors.author.text_reviews_count%></span></br>
+            </div>
+            </div>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
+    </body>
+</html>
